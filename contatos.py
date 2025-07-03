@@ -1,6 +1,7 @@
 # contatos.py
 
 import os
+from time import sleep
 
 ARQUIVO = "contatos.txt"
 
@@ -39,21 +40,56 @@ def buscar_contato(contatos):
     if not resultados:
         print("\033[31mNenhum contato encontrado com esse nome.\033[0m")
 
+def titulo(texto):
+    print('-' * 30)
+    print(f'{texto:^30}')
+    print('-' * 30)
+
+def remover_contato(contatos):
+    termo = input("Remover por nome: ").lower()
+    encontrados = [c for c in contatos if termo in c['nome'].lower()]
+
+    if not encontrados:
+        print("\033[31mNenhum contato encontrado para remover.\033[0m")
+        return
+
+    for i, c in enumerate(encontrados, 1):
+        print(f"{i}. {c['nome']} - {c['telefone']} - {c['email']}")
+
+    try:
+        escolha = int(input("Digite o número do contato a remover: "))
+        if 1 <= escolha <= len(encontrados):
+            contatos.remove(encontrados[escolha - 1])
+            print("\033[32mContato removido com sucesso.\033[0m")
+        else:
+            print("\033[31mNúmero inválido.\033[0m")
+    except ValueError:
+        print("\033[31mEntrada inválida. Digite um número.\033[0m")
+
 def menu():
     contatos = carregar_contatos()
     while True:
-        print("\n1. Cadastrar contato\n2. Listar contatos\n3. Buscar contato\n4. Sair")
+        titulo("GERENCIADOR DE CONTATOS")
+        print("1. Cadastrar contato\n2. Listar contatos\n3. Buscar contato\n4. Remover contato\n5. Sair")
         try:
             opcao = int(input("Escolha uma opção: "))
             if opcao == 1:
+                titulo('CADASTRO DE CONTATOS')
                 cadastrar_contato(contatos)
             elif opcao == 2:
+                titulo('LISTA DE CONTATOS')
                 listar_contatos(contatos)
             elif opcao == 3:
+                titulo('BUSCANDO CONTATOS')
                 buscar_contato(contatos)
             elif opcao == 4:
+                titulo('REMOVER CONTATO')
+                remover_contato(contatos)
+            elif opcao == 5:
                 salvar_contatos(contatos)
-                print("\033[34mFinalizando programa... Volte sempre!\033[0m")
+                print("\033[32mSaindo... Contatos salvos.\033[0m")
+                sleep(1)
+                print("\033[34mPrograma finalizado. Volte sempre!\033[0m")
                 break
             else:
                 print("\033[31m[ERRO] Opção inválida.\033[0m")
