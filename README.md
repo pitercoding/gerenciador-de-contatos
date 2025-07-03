@@ -2,8 +2,6 @@
 
 Um projeto simples em Python para gerenciar contatos via terminal. Permite **cadastrar**, **listar**, **buscar** e **remover contatos**, com os dados salvos em um arquivo `.txt`.
 
----
-
 ## 🚀 Funcionalidades
 
 - 📥 Cadastrar novo contato
@@ -12,8 +10,6 @@ Um projeto simples em Python para gerenciar contatos via terminal. Permite **cad
 - ❌ Remover contato
 - 💾 Dados persistem entre execuções
 
----
-
 ## 🧠 Conceitos aplicados
 
 - Manipulação de arquivos `.txt`
@@ -21,8 +17,6 @@ Um projeto simples em Python para gerenciar contatos via terminal. Permite **cad
 - Estrutura de menus e controle de fluxo
 - Validação de entrada do usuário
 - Modularização em pacotes Python
-
----
 
 ## 🏁 Como executar
 
@@ -39,7 +33,7 @@ python main.py
 ```
 
 ## 🗂️ Estrutura do projeto
-
+```
 gerenciador-de-contatos/
 ├── contatos/
 │   ├── __init__.py
@@ -51,9 +45,10 @@ gerenciador-de-contatos/
 ├── main.py
 ├── README.md
 └── requirements.txt
+```
 
 ## ✍️ Exemplo de uso
-
+```
 ------------------------------
      GERENCIADOR DE CONTATOS
 ------------------------------
@@ -63,6 +58,18 @@ gerenciador-de-contatos/
 4. Remover contato
 5. Sair
 Escolha uma opção:
+```
 
 ## 📧 Contato
-Projeto criado por Piter Gomes como exercício de aprendizado em Python.
+* [GitHub](https://github.com/pitercoding)
+
+* [LinkedIn](https://www.linkedin.com/in/piter-gomes-4a39281a1/)
+
+## 🤝 Contribuições
+Este projeto está aberto para contribuições! Se você também está aprendendo Python ou quer ajudar com ideias e melhorias, sinta-se à vontade para abrir um Pull Request ou Issue.
+
+## 👨‍💻 Autor
+Projeto desenvolvido por um estudante de Python com fins educacionais e de aprendizado pessoal. Se quiser trocar ideia ou colaborar, é só chamar!
+
+## 📄 Licença
+Este projeto está sob a licença MIT. Sinta-se livre para usar, modificar e compartilhar.
